@@ -223,9 +223,8 @@
         # Previously, in call to coxph.getdata(), x=variance was used as argument,
         # meaning that data$x would be non-null iff variance=TRUE, hence the previous
         # if (!is.null(data$x)) x <- data$x[ord,], is changed into: if (variance) ...
-        if (variance) x <- x[ord,]
-        else          x <- 0
-        
+        x <- x[ord,]
+                
         # The strata part works differently from survfit; each line in
         # newdata is associated with a single stratum, explicitly given in
         # newdata
